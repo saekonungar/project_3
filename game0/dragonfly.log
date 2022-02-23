@@ -1,0 +1,16 @@
+18:28:56    0 ****************************************************
+18:28:56    0 ** Dragonfly version 4.16 **
+18:28:56    0 ** Game engine started **
+18:28:56    0 ****************************************************
+18:29:02   90 RM::loadSprite(): Loading sprite 'sprites/board_space_spr.txt'.
+18:29:02   90 RM::loadSprite(): Sprite 'space' loaded.
+18:29:25  676 GameManager::run(): Can't keep up! frame_time 33 ms, split 38 ms
+18:29:29  794 GameManager::run(): Can't keep up! frame_time 33 ms, split 34 ms
+18:29:29  795 GameManager::run(): Can't keep up! frame_time 33 ms, split 35 ms
+18:29:34  950 GameManager::run(): Can't keep up! frame_time 33 ms, split 34 ms
+18:29:34  952 GameManager::run(): Can't keep up! frame_time 33 ms, split 33 ms
+18:29:34  953 GameManager::run(): Can't keep up! frame_time 33 ms, split 34 ms
+18:29:34  962 GameManager::run(): Can't keep up! frame_time 33 ms, split 34 ms
+18:29:39 1095 GameManager::run(): Can't keep up! frame_time 33 ms, split 36 ms
+18:29:39 1107 GameManager::run(): Can't keep up! frame_time 33 ms, split 34 ms
+18:29:43 1216 GameManager::run(): Can't keep up! frame_time 33 ms, split 34 ms
