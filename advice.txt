@@ -1,0 +1,7 @@
+ALPHA ADVICE
+- know the limits of the engine
+- work on mechanics first
+- design software classes
+- iterative development: playable early, then revise
+- triage: core, required, desired
+- must always compile
