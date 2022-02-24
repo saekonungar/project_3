@@ -6,10 +6,10 @@ color yellow
 slowdown 0
 </HEADER>
 <BODY>
-   +---+  
-   +---+ +
-     / | |
-   +  +  +
+  +----+  
+  +----+ +
+  +  / | |
+  +   +  +
           
 end
 </BODY>

@@ -12,12 +12,12 @@
 //2 lists: total spaces, and filled spaces
 //whether a space is empty or filled is tracked in this class, and sprites are handled
 
-Space::Space() {
+Space::Space(df::Vector position) {
 	setType("Space");
 	setSprite("space");
-	df::Vector v(10, 10);
-	setPosition(v);
+	setPosition(position);
 	isStart = false;
+	marked = false;
 	registerInterest(df::STEP_EVENT);
 }
 
@@ -61,12 +61,20 @@ Space* Space::getNeighbor(Direction which) {
 //access the path of the train to figure out which sprite to use and which sprite to change
 int Space::eventHandler(const df::Event* p_e) {
 	if (p_e->getType() == df::STEP_EVENT) {
-		step();
 		return 1;
 	}
 	return 0;
 }
 
-void Space::step() {
-	//on each step
+bool Space::isMarked() const {
+	return marked;
+}
+
+void Space::markSpace() {
+	marked = true;
+	//update sprite with correct direction of tracks
+}
+
+void Space::eraseSpace() {
+	marked = false;
 }

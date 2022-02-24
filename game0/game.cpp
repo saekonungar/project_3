@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
   LM.setFlush(true);
 
   // Show splash screen.
-  df::splash();
+  //df::splash();
 
   //load game resources.
   loadResources();
@@ -43,9 +43,9 @@ int main(int argc, char *argv[]) {
 
 void loadResources() {
     RM.loadSprite("sprites/board_space_spr.txt", "space");
-    new Board("boards/board_01.txt");
+    RM.loadSprite("sprites/train_up_normal.txt", "train_up_n");
+    new Board("boards/board_02.txt");
 }
 
 void populateWorld() {
-    new Space;
 }

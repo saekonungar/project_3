@@ -3,14 +3,14 @@
 
 #include "Object.h"
 
-class Space : public df::Object {
-
-enum Direction{
+enum Direction {
 	UP,
 	DOWN,
 	LEFT,
 	RIGHT,
 };
+
+class Space : public df::Object {
 
 private:
 	Space *up;
@@ -18,12 +18,15 @@ private:
 	Space *left;
 	Space *right;
 	bool isStart;
-	void step();
+	bool marked;
 public:
-	Space();
+	Space(df::Vector position);
 	int eventHandler(const df::Event* p_e) override;
 	void setNeighbor(Direction which, Space *new_node);
 	Space* getNeighbor(Direction which);
+	bool isMarked() const;
+	void markSpace();
+	void eraseSpace();
 };
 
 #endif 

@@ -5,15 +5,17 @@
 #include "Space.h"
 #include "ObjectList.h"
 #include "ObjectListIterator.h"
-
-#define MAX_BOARD_SIZE 100
+#include "Train.h"
 
 class Board : public df::Object {
 private:
 	bool board_loaded;
+	int board_rows;
+	int board_columns;
+	int num_of_spaces;
 	df::ObjectList empty_spaces;
 	df::ObjectList filled_spaces;
-	Space* p_train_path[MAX_BOARD_SIZE];
+	Train* train;//may not need this stored here
 public:
 	Board(const char* filename);
 	int eventHandler(const df::Event* p_e) override;
