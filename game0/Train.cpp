@@ -55,9 +55,11 @@ void Train::move(Direction where) {
 	if (train_space->getNeighbor(where) != NULL && !train_space->getNeighbor(where)->isMarked()) {
 		//update current space
 		if (spaces_filled == 1) {//if its the first space,
-			train_space->markSpace(UP, where);
+			train_space->markSpace(NULL, train_space->getNeighbor(where));
 		}
-		train_space->markSpace(p_train_path[spaces_filled-1], train_space->getNeighbor(where));
+		else {
+			train_space->markSpace(p_train_path[spaces_filled - 2], train_space->getNeighbor(where));
+		}
 		train_space = train_space->getNeighbor(where);
 		p_train_path[spaces_filled] = train_space;
 		spaces_filled++;

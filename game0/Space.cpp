@@ -82,12 +82,14 @@ void Space::markSpace(Space* prev, Space* next) {
 	marked = true;
 	//update sprite
 
-	//up-down
-	if ((prev == down && next == up) || (prev == up && next == down))
+	//vertical
+	if ((prev == down && next == up) || (prev == up && next == down) ||
+		(prev == NULL && next == up) || (prev == NULL && next == down))
 		setSprite("tracks_vertical");
 
-	//left-right
-	if ((prev == right && next == left) || (prev == left && next == right))
+	//horizontal
+	if ((prev == right && next == left) || (prev == left && next == right) ||
+		(prev == NULL && next == left) || (prev == NULL && next == right))
 		setSprite("tracks_horizontal");
 
 	//bottom left corner
