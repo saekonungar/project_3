@@ -6,8 +6,8 @@ class Menu : public df::ViewObject {
         df::Music *p_music;
         void start();
     public:
-        GameStart();
+        Menu();
         int eventHandler(const df::Event *p_e) override;
         int draw() override;
         void playMusic();
-}
+};

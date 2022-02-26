@@ -8,6 +8,7 @@
 #include "ResourceManager.h"
 #include "Space.h"
 #include "Board.h"
+#include "Menu.h"
 
 //methods
 void loadResources();
@@ -42,7 +43,7 @@ int main(int argc, char *argv[]) {
 }
 
 void loadResources() {
-    /*RM.loadSprite("sprites/board_space_spr.txt", "space");
+    RM.loadSprite("sprites/board_space_spr.txt", "space");
 
     //load train sprites
     RM.loadSprite("sprites/train_up_normal.txt", "train_up_n");
@@ -56,9 +57,10 @@ void loadResources() {
     RM.loadSprite("sprites/tracks_corner_1_spr.txt", "tracks_corner1");
     RM.loadSprite("sprites/tracks_corner_2_spr.txt", "tracks_corner2");
     RM.loadSprite("sprites/tracks_corner_3_spr.txt", "tracks_corner3");
-    RM.loadSprite("sprites/tracks_corner_4_spr.txt", "tracks_corner4");*/
+    RM.loadSprite("sprites/tracks_corner_4_spr.txt", "tracks_corner4");
 }
 
 void populateWorld() {
-    new Board("boards/board_01.txt");
+    new Menu();
+    //new Board("boards/board_01.txt");
 }

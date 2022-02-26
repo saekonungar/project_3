@@ -3,7 +3,7 @@
 frames 1
 width 70
 height 9
-color brown
+color blue
 slowdown 15
 </HEADER>
 <BODY>
