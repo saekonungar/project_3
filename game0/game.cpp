@@ -58,9 +58,10 @@ void loadResources() {
     RM.loadSprite("sprites/tracks_corner_2_spr.txt", "tracks_corner2");
     RM.loadSprite("sprites/tracks_corner_3_spr.txt", "tracks_corner3");
     RM.loadSprite("sprites/tracks_corner_4_spr.txt", "tracks_corner4");
+    new Menu();
 }
 
 void populateWorld() {
-    new Menu();
+    
     //new Board("boards/board_01.txt");
 }
