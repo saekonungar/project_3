@@ -1,6 +1,6 @@
-where to start next time:
-- properly set up spaces with neighbors
-- implement updating spaces when filled
+to do for alpha:
+- create win event
+- 
 
 features to add for polished
 
