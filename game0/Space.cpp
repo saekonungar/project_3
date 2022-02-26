@@ -19,6 +19,10 @@ Space::Space(df::Vector position) {
 	isStart = false;
 	marked = false;
 	registerInterest(df::STEP_EVENT);
+	up = NULL;
+	down = NULL;
+	left = NULL;
+	right = NULL;
 }
 
 void Space::setNeighbor(Direction which, Space* new_node) {
@@ -70,9 +74,37 @@ bool Space::isMarked() const {
 	return marked;
 }
 
-void Space::markSpace() {
+void Space::setAsStart() {
+	isStart = true;
+}
+
+void Space::markSpace(Space* prev, Space* next) {
 	marked = true;
-	//update sprite with correct direction of tracks
+	//update sprite
+
+	//up-down
+	if ((prev == down && next == up) || (prev == up && next == down))
+		setSprite("tracks_vertical");
+
+	//left-right
+	if ((prev == right && next == left) || (prev == left && next == right))
+		setSprite("tracks_horizontal");
+
+	//bottom left corner
+	if ((prev == up && next == right) || (prev == right && next == up))
+		setSprite("tracks_corner1");
+
+	//bottom right corner
+	if ((prev == up && next == left) || (prev == left && next == up))
+		setSprite("tracks_corner2");
+
+	//top right corner
+	if ((prev == down && next == left) || (prev == left && next == down))
+		setSprite("tracks_corner3");
+
+	//top left corner
+	if ((prev == down && next == right) || (prev == right && next == down))
+		setSprite("tracks_corner4");
 }
 
 void Space::eraseSpace() {

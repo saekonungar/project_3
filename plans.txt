@@ -1,3 +1,7 @@
+where to start next time:
+- properly set up spaces with neighbors
+- implement updating spaces when filled
+
 features to add for polished
 
 - train rotate before game started

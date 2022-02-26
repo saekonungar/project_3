@@ -13,9 +13,9 @@ private:
 	int board_rows;
 	int board_columns;
 	int num_of_spaces;
+	Train* train;//may not need this stored here
 	df::ObjectList empty_spaces;
 	df::ObjectList filled_spaces;
-	Train* train;//may not need this stored here
 public:
 	Board(const char* filename);
 	int eventHandler(const df::Event* p_e) override;

@@ -25,7 +25,8 @@ public:
 	void setNeighbor(Direction which, Space *new_node);
 	Space* getNeighbor(Direction which);
 	bool isMarked() const;
-	void markSpace();
+	void setAsStart();
+	void markSpace(Space* prev, Space* next);
 	void eraseSpace();
 };
 

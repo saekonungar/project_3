@@ -4,6 +4,7 @@
 #include "Object.h"
 #include "Vector.h"
 #include "Space.h"
+#include "EventKeyboard.h"
 
 #define MAX_BOARD_SIZE 100
 
@@ -14,7 +15,7 @@ private:
 	void kbd(const df::EventKeyboard* p_k_e);
 	void move(Direction where);
 	Space* p_train_path[MAX_BOARD_SIZE];
-	int 
+	int spaces_filled;
 public:
 	Train(Space* on_space);
 	int eventHandler(const df::Event* p_e) override;
