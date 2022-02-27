@@ -41,11 +41,10 @@ LINKLIB= -ldragonfly-linux64 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-
 ######
 
 GAMESRC= \
-		  Menu.cpp\
-		  game.cpp\
 		  Space.cpp\
 		  Train.cpp\
 		  Board.cpp\
+		  Menu.cpp\
 
 GAME= game.cpp
 EXECUTABLE= game

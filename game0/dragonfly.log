@@ -1,28 +1,30 @@
-18:14:49    0 ****************************************************
-18:14:49    0 ** Dragonfly version 4.16 **
-18:14:49    0 ** Game engine started **
-18:14:49    0 ****************************************************
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/board_space_spr.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'space' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/train_up_normal.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'train_up_n' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/train_down_normal.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'train_down_n' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/train_left_normal.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'train_left_n' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/train_right_normal.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'train_right_n' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/tracks_vertical_spr.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'tracks_vertical' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/tracks_horizontal_spr.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'tracks_horizontal' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_1_spr.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'tracks_corner1' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_2_spr.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'tracks_corner2' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_3_spr.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'tracks_corner3' loaded.
-18:14:49    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_4_spr.txt'.
-18:14:49    0 RM::loadSprite(): Sprite 'tracks_corner4' loaded.
-18:18:18 6307 ****************************************************
-18:18:18 6307 ** Game engine stopped **
+19:13:09    0 ****************************************************
+19:13:09    0 ** Dragonfly version 4.16 **
+19:13:09    0 ** Game engine started **
+19:13:09    0 ****************************************************
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/board_space_spr.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'space' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/train_up_normal.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'train_up_n' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/train_down_normal.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'train_down_n' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/train_left_normal.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'train_left_n' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/train_right_normal.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'train_right_n' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/tracks_vertical_spr.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'tracks_vertical' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/tracks_horizontal_spr.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'tracks_horizontal' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_1_spr.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'tracks_corner1' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_2_spr.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'tracks_corner2' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_3_spr.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'tracks_corner3' loaded.
+19:13:09    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_4_spr.txt'.
+19:13:09    0 RM::loadSprite(): Sprite 'tracks_corner4' loaded.
+19:13:09    0 RM::getSprite(): Warning! Sprite 'menu' not found.
+19:13:09    0 Object::setSprite(): Warning! Sprite 'menu' not found
+19:13:12   80 ****************************************************
+19:13:12   80 ** Game engine stopped **

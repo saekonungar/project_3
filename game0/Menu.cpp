@@ -20,6 +20,9 @@ Menu::Menu(){
 
 }
 
+//LOAD BEARING WORTHLESS LINE
+Menu::~Menu() {} //fixes Vtable error
+
 int Menu::draw() {
   return df::Object::draw();
 }
