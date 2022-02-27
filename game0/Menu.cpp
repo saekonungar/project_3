@@ -43,12 +43,14 @@ int Menu::eventHandler(const df::Event *p_e) {
     setType("Win");
     setActive(true);
   }
+
+  return 1;
 }
 
 void Menu::start() {
 
     level = new Board("boards/board_01.txt");
-    setSprite('empty');
+    setActive(false);
 }
 
 //LOAD BEARING WORTHLESS LINE
