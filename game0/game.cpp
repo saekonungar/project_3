@@ -3,6 +3,7 @@
 // 
 
 // Engine includes.
+#include <stdio.h>
 #include "GameManager.h"
 #include "LogManager.h"
 #include "ResourceManager.h"
