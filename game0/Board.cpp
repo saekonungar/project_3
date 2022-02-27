@@ -1,4 +1,5 @@
 #include "Board.h"
+#include "Space.h"
 #include "DisplayManager.h"
 #include "LogManager.h"
 #include "Vector.h"
@@ -69,6 +70,7 @@ Board::Board(const char* filename) {
 		v.setX(x_start);
 		v.setY(v.getY()+5);
 	}
+	train->setNumSpaces(num_of_spaces);
 	//set up spaces neighbors
 	for (int i = 0; i < board_rows; i++) {
 		for (int j = 0; j < board_columns; j++) {

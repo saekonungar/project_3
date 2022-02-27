@@ -13,9 +13,9 @@ private:
 	int board_rows;
 	int board_columns;
 	int num_of_spaces;
-	Train* train;//may not need this stored here
 	df::ObjectList empty_spaces;
 	df::ObjectList filled_spaces;
+	Train* train;
 public:
 	Board(const char* filename);
 	int getNumSpaces() const; //return the number of spaces in the board

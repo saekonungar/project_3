@@ -2,12 +2,12 @@
 #include "LogManager.h"
 #include "EventWin.h"
 
-Train::Train(Space* on_space, Board* on_board) {
+Train::Train(Space* on_space) {
 	setType("Train");
 	setSprite("train_up_n");
 	setAltitude(3);
 	train_space = on_space;
-	train_board = on_board;
+	spaces_to_fill = 0;
 	setPosition(on_space->getPosition());
 	registerInterest(df::KEYBOARD_EVENT);
 
@@ -16,6 +16,9 @@ Train::Train(Space* on_space, Board* on_board) {
 	p_train_path[0] = train_space;
 }
 
+void Train::setNumSpaces(int spaces) {
+	spaces_to_fill = spaces;
+}
 
 //handle move event:
 //move to given space (stored in event)
@@ -84,7 +87,7 @@ void Train::move(Direction where) {
 		}
 
 		//after a move forward, check for win
-		if (spaces_filled = train_board->getNumSpaces()) {
+		if (spaces_filled = spaces_to_fill) {
 			new EventWin;
 		}
 
