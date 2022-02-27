@@ -8,7 +8,6 @@
 //Other Includes
 #include "Menu.h"
 #include "Board.h"
-#include <stdio.h>
 
 Menu::Menu(){
     setType("Menu");
