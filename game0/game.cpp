@@ -64,6 +64,6 @@ void loadResources() {
 }
 
 void populateWorld() {
-    new Menu();
+    new Menu("Menu", "menu");
     //new Board("boards/board_01.txt");
 }

@@ -12,11 +12,12 @@
 #include "EventWin.h"
 
 
-Menu::Menu(){
-    setType("Menu");
-    setSprite("menu");
+Menu::Menu(std::string type, std::string sprite){
+    setType(type);
+    setSprite(sprite);
     setLocation(df::CENTER_CENTER);
     registerInterest(df::KEYBOARD_EVENT);
+    registerInterest(WIN_EVENT);
 }
 
 int Menu::eventHandler(const df::Event *p_e) {
@@ -35,12 +36,16 @@ int Menu::eventHandler(const df::Event *p_e) {
     }
     return 1;
   }
+
+  if (p_e->getType() == WIN_EVENT){
+    LM.writeLog("bababooey!");
+  }
 }
 
 void Menu::start() {
-
+     setSprite("train_up_n");
     new Board("boards/board_01.txt");
-    setActive(false);
+    
 }
 
 //LOAD BEARING WORTHLESS LINE
