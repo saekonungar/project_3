@@ -39,7 +39,7 @@ int Menu::eventHandler(const df::Event *p_e) {
 
 void Menu::start() {
 
-    level = new Board("boards/board_01.txt");
+    new Board("boards/board_01.txt");
     setActive(false);
 }
 
