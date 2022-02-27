@@ -1,9 +1,9 @@
 <HEADER>
 frames 1
-width 70
-height 9
+width 39
+height 6
 color blue
-slowdown 15
+slowdown 0
 </HEADER>
 <BODY>
   _____                 _ _          _ 
@@ -11,7 +11,7 @@ slowdown 15
  | |  | | ___ _ __ __ _ _| | ___  __| |
  | |  | |/ _ \ '__/ _` | | |/ _ \/ _` |
  | |__| |  __/ | | (_| | | |  __/ (_| |
- |_____/ \___|_|  \__,_|_|_|\___|\__,_|             
+ |_____/ \___|_|  \__,_|_|_|\___|\__,_|
 end
 </BODY>
 <FOOTER>

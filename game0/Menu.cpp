@@ -12,12 +12,10 @@
 Menu::Menu(){
     setType("Menu");
 
-    setSprite("menu");
+     setSprite("menu");
     setLocation(df::CENTER_CENTER);
 
     registerInterest(df::KEYBOARD_EVENT);
-    
-
 }
 
 int Menu::eventHandler(const df::Event *p_e) {
@@ -44,7 +42,7 @@ void Menu::start() {
 }
 
 //LOAD BEARING WORTHLESS LINE
-Menu::~Menu() {} //fixes Vtable error
+Menu::~Menu() {} //fixes Vtable error when I build on linux
 
 int Menu::draw() {
   return df::Object::draw();

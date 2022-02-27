@@ -1,30 +1,30 @@
-20:31:40    0 ****************************************************
-20:31:40    0 ** Dragonfly version 4.16 **
-20:31:40    0 ** Game engine started **
-20:31:40    0 ****************************************************
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/board_space_spr.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'space' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/train_up_normal.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'train_up_n' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/train_down_normal.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'train_down_n' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/train_left_normal.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'train_left_n' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/train_right_normal.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'train_right_n' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_vertical_spr.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'tracks_vertical' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_horizontal_spr.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'tracks_horizontal' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_1_spr.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'tracks_corner1' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_2_spr.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'tracks_corner2' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_3_spr.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'tracks_corner3' loaded.
-20:31:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_4_spr.txt'.
-20:31:40    0 RM::loadSprite(): Sprite 'tracks_corner4' loaded.
-20:31:40    0 RM::getSprite(): Warning! Sprite 'board_space_spr.txt' not found.
-20:31:40    0 Object::setSprite(): Warning! Sprite 'board_space_spr.txt' not found
-20:31:41   25 ****************************************************
-20:31:41   25 ** Game engine stopped **
+20:49:40    0 ****************************************************
+20:49:40    0 ** Dragonfly version 4.16 **
+20:49:40    0 ** Game engine started **
+20:49:40    0 ****************************************************
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/board_space_spr.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'space' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/menu.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'menu' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/train_up_normal.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'train_up_n' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/train_down_normal.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'train_down_n' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/train_left_normal.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'train_left_n' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/train_right_normal.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'train_right_n' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_vertical_spr.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'tracks_vertical' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_horizontal_spr.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'tracks_horizontal' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_1_spr.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'tracks_corner1' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_2_spr.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'tracks_corner2' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_3_spr.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'tracks_corner3' loaded.
+20:49:40    0 RM::loadSprite(): Loading sprite 'sprites/tracks_corner_4_spr.txt'.
+20:49:40    0 RM::loadSprite(): Sprite 'tracks_corner4' loaded.
+20:49:46  169 ****************************************************
+20:49:46  169 ** Game engine stopped **
