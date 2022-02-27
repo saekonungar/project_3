@@ -34,12 +34,14 @@ int Menu::eventHandler(const df::Event *p_e) {
     default:
       break;
     }
-    return 1;
+    
   }
 
   if (p_e->getType() == WIN_EVENT){
     LM.writeLog("bababooey!");
   }
+
+  return 1;
 }
 
 void Menu::start() {
