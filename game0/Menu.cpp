@@ -35,15 +35,6 @@ int Menu::eventHandler(const df::Event *p_e) {
     }
     return 1;
   }
-
-  if (p_e->getType() == WIN_EVENT) {
-    WM.markForDelete(level);
-    setSprite("win");
-    setType("Win");
-    setActive(true);
-  }
-
-  return 1;
 }
 
 void Menu::start() {
