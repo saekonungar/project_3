@@ -1,6 +1,8 @@
 #include "Train.h"
 #include "LogManager.h"
+#include "WorldManager.h"
 #include "EventWin.h"
+#include "Windows.h"
 
 Train::Train(Space* on_space) {
 	setType("Train");
@@ -71,6 +73,8 @@ void Train::move(Direction where) {
 
 		//physically move train
 		setPosition(train_space->getPosition());
+		if(spaces_filled == spaces_to_fill)
+			LM.writeLog("moved last time");
 		switch (where) {
 		case (UP):
 			setSprite("train_up_n");
@@ -87,7 +91,8 @@ void Train::move(Direction where) {
 		}
 
 		//after a move forward, check for win
-		if (spaces_filled = spaces_to_fill) {
+		if (spaces_filled == spaces_to_fill) {
+			train_space->markSpace(p_train_path[spaces_filled-1], NULL);
 			new EventWin;
 		}
 
