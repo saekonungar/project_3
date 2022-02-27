@@ -12,7 +12,7 @@
 Menu::Menu(){
     setType("Menu");
 
-    setSprite("menu");
+     setSprite("menu");
     setLocation(df::CENTER_CENTER);
 
     registerInterest(df::KEYBOARD_EVENT);
