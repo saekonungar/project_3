@@ -45,6 +45,7 @@ GAMESRC= \
 		  Space.cpp\
 		  Train.cpp\
 		  Board.cpp\
+		  EventWin.cpp\
 		  
 
 GAME= game.cpp

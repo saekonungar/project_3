@@ -1,6 +1,6 @@
 #include "Music.h"
 #include "ViewObject.h"
-
+#include "Board.h"
 class Menu : public df::ViewObject {
     private:
         df::Music *p_music;
@@ -11,4 +11,5 @@ class Menu : public df::ViewObject {
         int draw() override;
         //void playMusic();
         virtual ~Menu();
+        Board* level;
 };

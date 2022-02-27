@@ -2,7 +2,6 @@
 #include "LogManager.h"
 #include "WorldManager.h"
 #include "EventWin.h"
-#include "Windows.h"
 
 Train::Train(Space* on_space) {
 	setType("Train");

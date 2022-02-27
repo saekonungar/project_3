@@ -5,16 +5,18 @@
 #include "GameManager.h"
 #include "ResourceManager.h"
 #include "WorldManager.h"
+#include "EventStep.h"
 //Other Includes
 #include "Menu.h"
 #include "Board.h"
+#include "EventWin.h"
+
 
 Menu::Menu(){
     setType("Menu");
-
-     setSprite("menu");
+    setSprite("menu");
     setLocation(df::CENTER_CENTER);
-
+    level = new Board("boards/board_01.txt");
     registerInterest(df::KEYBOARD_EVENT);
 }
 
@@ -34,11 +36,19 @@ int Menu::eventHandler(const df::Event *p_e) {
     }
     return 1;
   }
+
+  if (p_e->getType() == WIN_EVENT) {
+    WM.markForDelete(level);
+    setSprite("win");
+    setType("Win");
+    setActive(true);
+  }
 }
 
 void Menu::start() {
 
-    new Board("boards/board_01.txt");~
+    level = new Board("boards/board_01.txt");
+    setSprite('empty');
 }
 
 //LOAD BEARING WORTHLESS LINE

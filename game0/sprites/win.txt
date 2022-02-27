@@ -1,0 +1,19 @@
+<HEADER>
+frames 1
+width 54
+height 6
+color blue
+slowdown 0
+</HEADER>
+<BODY>
+      _    ___    _   _    __      __  _   _ __   | |
+ | | | |  / _ \  | | | |   \ \ /\ / / | | | '_ \  | |
+ | |_| | | (_) | | |_| |    \ V  V /  | | | | | | |_|
+  \__, |  \___/   \__,_|     \_/\_/   |_| |_| |_| (_)
+   __/ |                                             
+      press 'r' to go back or 'q' to quit             
+end
+</BODY>
+<FOOTER>
+version 1
+</FOOTER>
