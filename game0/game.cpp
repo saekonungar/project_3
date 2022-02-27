@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
 
 void loadResources() {
     RM.loadSprite("sprites/board_space_spr.txt", "space");
-
+    RM.loadSprite("sprites/menu.txt", "menu");
     //load train sprites
     RM.loadSprite("sprites/train_up_normal.txt", "train_up_n");
     RM.loadSprite("sprites/train_down_normal.txt", "train_down_n");
