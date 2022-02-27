@@ -1,6 +1,7 @@
 #include "Board.h"
 #include "Space.h"
 #include "DisplayManager.h"
+#include "WorldManager.h"
 #include "LogManager.h"
 #include "Vector.h"
 #include <iostream>
@@ -51,10 +52,8 @@ Board::Board(const char* filename) {
 		for (int j = 0; j < board_columns; j++) {
 			if ((line.at(j) == '1') || (line.at(j) == 'x')) {
 				Space* s = new Space(v);
-				empty_spaces.insert(s);
+				all_spaces.insert(s);
 				if (line.at(j) == 'x') {
-					empty_spaces.remove(s);
-					filled_spaces.insert(s);
 					train = new Train(s);
 				}
 				
@@ -96,6 +95,14 @@ Board::Board(const char* filename) {
 	}
 
 	board_file.close();
+}
+
+Board::~Board() {
+	df::ObjectListIterator li(&all_spaces);
+	for (li.first(); !li.isDone(); li.next()) {
+		WM.markForDelete(li.currentObject());
+	}
+	WM.markForDelete(train);
 }
 
 //return the number of spaces in the board

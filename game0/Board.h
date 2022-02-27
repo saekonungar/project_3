@@ -13,11 +13,11 @@ private:
 	int board_rows;
 	int board_columns;
 	int num_of_spaces;
-	df::ObjectList empty_spaces;
-	df::ObjectList filled_spaces;
+	df::ObjectList all_spaces;
 	Train* train;
 public:
 	Board(const char* filename);
+	~Board();
 	int getNumSpaces() const; //return the number of spaces in the board
 };
 
