@@ -1,8 +1,8 @@
 to do for alpha:
 - create win event
-- 
 
 features to add for polished
-
 - train rotate before game started
 - have train turn red when the game is lost
+- try out other squares for spaces
+- consider making the spaces smaller

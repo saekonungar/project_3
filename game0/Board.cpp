@@ -12,6 +12,7 @@ Board::Board(const char* filename) {
 	board_loaded = false;
 	board_rows = 0;
 	board_columns = 0;
+	num_of_spaces = 0;
 
 	//SET UP BOARD based on input
 
@@ -58,6 +59,7 @@ Board::Board(const char* filename) {
 				
 				//add to grid list
 				grid[i][j] = s;
+				num_of_spaces++;
 			}
 			else {
 				grid[i][j] = NULL;
@@ -94,12 +96,7 @@ Board::Board(const char* filename) {
 	board_file.close();
 }
 
-//events to handle: 
-//keyboard event (if puzzle being played)
-//checks the space in the direction of the attempted move.
-//if the action is possible, generates a move event
-//this move event is sent to the train
-//it then checks the state of the board for a win, loss, etc
-int Board::eventHandler(const df::Event* p_e) {
-	return 0;
+//return the number of spaces in the board
+int Board::getNumSpaces() const {
+	return num_of_spaces;
 }

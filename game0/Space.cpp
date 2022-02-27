@@ -111,4 +111,5 @@ void Space::markSpace(Space* prev, Space* next) {
 
 void Space::eraseSpace() {
 	marked = false;
+	setSprite("space");
 }

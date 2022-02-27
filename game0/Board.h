@@ -18,7 +18,7 @@ private:
 	df::ObjectList filled_spaces;
 public:
 	Board(const char* filename);
-	int eventHandler(const df::Event* p_e) override;
+	int getNumSpaces() const; //return the number of spaces in the board
 };
 
 #endif

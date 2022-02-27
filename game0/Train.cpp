@@ -1,11 +1,13 @@
 #include "Train.h"
 #include "LogManager.h"
+#include "EventWin.h"
 
-Train::Train(Space* on_space) {
+Train::Train(Space* on_space, Board* on_board) {
 	setType("Train");
 	setSprite("train_up_n");
 	setAltitude(3);
 	train_space = on_space;
+	train_board = on_board;
 	setPosition(on_space->getPosition());
 	registerInterest(df::KEYBOARD_EVENT);
 
@@ -51,7 +53,7 @@ void Train::kbd(const df::EventKeyboard* p_k_e) {
 void Train::move(Direction where) {
 	bool move = false;
 	train_space->isMarked();
-	//check if the intended move direction is a valid space to move
+	//check if the intended move direction is a valid space to move forwards
 	if (train_space->getNeighbor(where) != NULL && !train_space->getNeighbor(where)->isMarked()) {
 		//update current space
 		if (spaces_filled == 1) {//if its the first space,
@@ -80,5 +82,38 @@ void Train::move(Direction where) {
 			setSprite("train_right_n");
 			break;
 		}
+
+		//after a move forward, check for win
+		if (spaces_filled = train_board->getNumSpaces()) {
+			new EventWin;
+		}
+
 	}
+	//see if the player is trying to move backwards
+	else if (spaces_filled != 1 &&
+		train_space->getNeighbor(where) == p_train_path[spaces_filled-2]){
+
+		//update info
+		p_train_path[spaces_filled-1]->eraseSpace();
+		spaces_filled--;
+		train_space = train_space->getNeighbor(where);
+
+		//physically move train
+		setPosition(train_space->getPosition());
+		switch (where) {
+		case (UP):
+			setSprite("train_down_n");
+			break;
+		case (DOWN):
+			setSprite("train_up_n");
+			break;
+		case (LEFT):
+			setSprite("train_right_n");
+			break;
+		case (RIGHT):
+			setSprite("train_left_n");
+			break;
+		}
+	}
+
 }
