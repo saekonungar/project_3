@@ -16,7 +16,6 @@ Menu::Menu(){
     setType("Menu");
     setSprite("menu");
     setLocation(df::CENTER_CENTER);
-    level = new Board("boards/board_01.txt");
     registerInterest(df::KEYBOARD_EVENT);
 }
 
