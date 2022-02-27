@@ -45,7 +45,7 @@ int Menu::eventHandler(const df::Event *p_e) {
 }
 
 void Menu::start() {
-     setSprite("train_up_n");
+     setSprite("empty");
     new Board("boards/board_01.txt");
     
 }
