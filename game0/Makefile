@@ -17,8 +17,8 @@
 CC= g++ 
 
 # Libraries and includes.
-LINKDIR= -L../dragonfly/lib # path to dragonfly library
-INCDIR= -I../dragonfly/include # path to dragonfly includes
+LINKDIR= -L../../dragonfly/lib # path to dragonfly library
+INCDIR= -I../../dragonfly/include # path to dragonfly includes
 
 # Uncomment and update below if using local SFML installation.
 LINKDIR:= $(LINKDIR) -L$(HOME)/src/SFML-2.5.1/lib 
@@ -41,6 +41,11 @@ LINKLIB= -ldragonfly-linux64 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-
 ######
 
 GAMESRC= \
+		  Menu.cpp\
+		  Space.cpp\
+		  Train.cpp\
+		  Board.cpp\
+		  
 
 GAME= game.cpp
 EXECUTABLE= game

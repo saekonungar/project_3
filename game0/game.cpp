@@ -3,11 +3,13 @@
 // 
 
 // Engine includes.
+#include <stdio.h>
 #include "GameManager.h"
 #include "LogManager.h"
 #include "ResourceManager.h"
 #include "Space.h"
 #include "Board.h"
+#include "Menu.h"
 
 //methods
 void loadResources();
@@ -43,7 +45,7 @@ int main(int argc, char *argv[]) {
 
 void loadResources() {
     RM.loadSprite("sprites/board_space_spr.txt", "space");
-
+    RM.loadSprite("sprites/menu.txt", "menu");
     //load train sprites
     RM.loadSprite("sprites/train_up_normal.txt", "train_up_n");
     RM.loadSprite("sprites/train_down_normal.txt", "train_down_n");
@@ -60,5 +62,6 @@ void loadResources() {
 }
 
 void populateWorld() {
-    new Board("boards/board_01.txt");
+    new Menu();
+    //new Board("boards/board_01.txt");
 }
