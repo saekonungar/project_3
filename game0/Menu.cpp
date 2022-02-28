@@ -18,6 +18,7 @@ Menu::Menu(std::string type, std::string sprite){
     setLocation(df::CENTER_CENTER);
     registerInterest(df::KEYBOARD_EVENT);
     registerInterest(WIN_EVENT);
+    hasStarted = 0;
 }
 
 int Menu::eventHandler(const df::Event *p_e) {
@@ -26,7 +27,10 @@ int Menu::eventHandler(const df::Event *p_e) {
     df::EventKeyboard *p_keyboard_event = (df::EventKeyboard *) p_e;
     switch (p_keyboard_event->getKey()) {
     case df::Keyboard::P: 			// play
-      start();
+      if(hasStarted == 0){
+        start();
+        hasStarted = 1;
+      }
       break;
     case df::Keyboard::Q:			// quit
       GM.setGameOver();
@@ -36,12 +40,6 @@ int Menu::eventHandler(const df::Event *p_e) {
     }
     
   }
-
-  if (p_e->getType() == WIN_EVENT){
-    LM.writeLog("bababooey!");
-  }
-
-  LM.writeLog("event detected");
 
   return 1;
 }
