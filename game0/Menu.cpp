@@ -41,6 +41,8 @@ int Menu::eventHandler(const df::Event *p_e) {
     LM.writeLog("bababooey!");
   }
 
+  LM.writeLog("event detected");
+
   return 1;
 }
 

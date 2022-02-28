@@ -10,6 +10,8 @@
 using namespace std;
 
 Board::Board(const char* filename) {
+	LM.writeLog("board created");
+
 	setType("Board");
 	board_loaded = false;
 	board_rows = 0;
