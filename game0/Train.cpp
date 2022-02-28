@@ -92,8 +92,8 @@ void Train::move(Direction where) {
 		//after a move forward, check for win
 		if (spaces_filled == spaces_to_fill) {
 			train_space->markSpace(p_train_path[spaces_filled-1], NULL);
-			new EventWin;
-			LM.writeLog("win event created");
+			EventWin win;
+			WM.onEvent(&win);
 		}
 
 	}
