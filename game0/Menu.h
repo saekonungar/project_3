@@ -10,6 +10,7 @@ class Menu : public df::ViewObject {
         df::Music *p_music;
         void start();
         int hasStarted;
+        Board* level;
     public:
         Menu(std::string type, std::string sprite);
         int eventHandler(const df::Event *p_e) override;

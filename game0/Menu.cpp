@@ -20,6 +20,7 @@ Menu::Menu(std::string type, std::string sprite){
     registerInterest(df::KEYBOARD_EVENT);
     registerInterest(WIN_EVENT);
     hasStarted = 0;
+    
 }
 
 int Menu::eventHandler(const df::Event *p_e) {
@@ -43,14 +44,17 @@ int Menu::eventHandler(const df::Event *p_e) {
     
   }
 
-  if (p_e->getType() == WIN_EVENT)
+  if (p_e->getType() == WIN_EVENT){
     LM.writeLog("win event registered - menu");
+    WM.markForDelete(level);
+  }
+    
   return 1;
 }
 
 void Menu::start() {
-     setSprite("empty");
-    new Board("boards/board_01.txt");
+    setSprite("empty");
+    level = new Board("boards/board_01.txt");
     
 }
 
