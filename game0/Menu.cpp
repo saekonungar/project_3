@@ -40,7 +40,7 @@ int Menu::eventHandler(const df::Event *p_e) {
     }
     
   }
-
+  LM.writeLog("event registered - menu");
   return 1;
 }
 
