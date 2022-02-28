@@ -1,5 +1,17 @@
-features to add for polished
+for beta:
+DREW
+- implement timer as a displayobject
+- make a savefile (updates whenever a puzzle is complete)
+
+SKYE
+- create a level menu
+- implement level transitions
+
+BOTH:
+- add more levels to populate said menu
+- experiment with the sizing of the screen and sprites
+
+features to add for polished:
 - train rotate before game started
 - have train turn red when the game is lost
-- try out other squares for spaces
-- consider making the spaces smaller
+- consider additional cosmetic features (background for puzzles, etc)
