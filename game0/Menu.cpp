@@ -13,6 +13,7 @@
 
 
 Menu::Menu(std::string type, std::string sprite){
+
     setType(type);
     setSprite(sprite);
     setLocation(df::CENTER_CENTER);
@@ -23,7 +24,8 @@ Menu::Menu(std::string type, std::string sprite){
 
 int Menu::eventHandler(const df::Event *p_e) {
 
-  if (p_e->getType() == df::KEYBOARD_EVENT) {
+  if (p_e->getType() == df::KEYBOARD_EVENT && hasStarted == 0) {
+    LM.writeLog("keyboard event registered - menu");
     df::EventKeyboard *p_keyboard_event = (df::EventKeyboard *) p_e;
     switch (p_keyboard_event->getKey()) {
     case df::Keyboard::P: 			// play
@@ -40,7 +42,9 @@ int Menu::eventHandler(const df::Event *p_e) {
     }
     
   }
-  LM.writeLog("event registered - menu");
+
+  if (p_e->getType() == WIN_EVENT)
+    LM.writeLog("win event registered - menu");
   return 1;
 }
 
