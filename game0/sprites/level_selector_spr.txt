@@ -1,0 +1,18 @@
+<HEADER>
+frames 1
+width 69
+height 5
+color red
+slowdown 0
+</HEADER>
+<BODY>
+ __   ____  _     ____  __   _____      _     ____  _      ____  _   
+( (` | |_  | |   | |_  / /`   | |      | |   | |_  \ \  / | |_  | |  
+_)_) |_|__ |_|__ |_|__ \_\_,  |_|      |_|__ |_|__  \_\/  |_|__ |_|__
+             use 'a' and 'd' to select left and right                
+                      press enter to select                          
+end
+</BODY>
+<FOOTER>
+version 1
+</FOOTER>

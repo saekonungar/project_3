@@ -10,6 +10,7 @@
 #include "Menu.h"
 #include "Board.h"
 #include "EventWin.h"
+#include "LevelMenu.h"
 
 
 Menu::Menu(std::string type, std::string sprite){
@@ -48,7 +49,7 @@ int Menu::eventHandler(const df::Event *p_e) {
     LM.writeLog("win event registered - menu");
     setSprite("win");
     hasStarted = 0;
-    WM.markForDelete(level);
+    //WM.markForDelete(level);
   }
     
   return 1;
@@ -56,8 +57,8 @@ int Menu::eventHandler(const df::Event *p_e) {
 
 void Menu::start() {
     setSprite("empty");
-    level = new Board("boards/board_01.txt");
-    
+    //level = new Board("boards/board_01.txt");
+    new LevelMenu;
 }
 
 //LOAD BEARING WORTHLESS LINE

@@ -13,5 +13,9 @@ BOTH:
 
 features to add for polished:
 - train rotate before game started
-- have train turn red when the game is lost
+- have train turn red when the player goes into a corner
 - consider additional cosmetic features (background for puzzles, etc)
+- make the game pause for a second on a completed puzzle before pulling up the win menu
+- make the level selection move smoothly from side to side
+- also have level selection show highscore
+- put train tracks between level selection menu
