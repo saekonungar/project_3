@@ -49,7 +49,7 @@ int Train::eventHandler(const df::Event* p_e) {
 
 void Train::kbd(const df::EventKeyboard* p_k_e) {
 	//handle first move (enter key is still pressed)
-	if (!level_started && p_k_e->getKey() != df::Keyboard::RETURN) {
+	if (!level_started && p_k_e->getKey() != df::Keyboard::RETURN && p_k_e->getKey() != df::Keyboard::SPACE) {
 		level_started = true;
 		timer = 0;
 	}
@@ -109,8 +109,9 @@ void Train::move(Direction where) {
 		//after a move forward, check for win
 		if (spaces_filled == spaces_to_fill) {
 			train_space->markSpace(p_train_path[spaces_filled-1], NULL);
-			EventWin win;
-			WM.onEvent(&win);
+			level_completed = true;
+			//EventWin win;
+			//WM.onEvent(&win);
 		}
 
 	}
@@ -144,11 +145,12 @@ void Train::move(Direction where) {
 }
 
 //step handler
-//at start of game: train rotation (2 seconds for each rotation)
-//at end of game: timer until win event created (2 seconds)
+//at start of game: train rotation (1 second for each rotation)
+//at end of game: timer until win event created (1 second)
 void Train::step() {
+	//start of game
 	if (!level_started) {
-		if (timer == 33) {
+		if (timer == 15) {
 			switch (facing) {
 			case (UP):
 				setSprite("train_right_n");
@@ -172,5 +174,13 @@ void Train::step() {
 		else {
 			timer++;
 		}
+	}
+	//end of game
+	else if (level_completed) {
+		if (timer == 15) {
+			EventWin win;
+			WM.onEvent(&win);
+		}
+		timer++;
 	}
 }
