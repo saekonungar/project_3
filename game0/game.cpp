@@ -52,6 +52,7 @@ void loadResources() {
     RM.loadSprite("sprites/menu.txt", "menu");
     RM.loadSprite("sprites/win.txt", "win");
     RM.loadSprite("sprites/level_selector_spr.txt", "level_menu");
+    RM.loadSprite("sprites/level_transition_spr.txt", "level_transition");
 
     //load train sprites
     RM.loadSprite("sprites/train_up_normal.txt", "train_up_n");

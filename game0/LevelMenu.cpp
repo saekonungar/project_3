@@ -74,3 +74,19 @@ void LevelMenu::kbd(const df::EventKeyboard* p_k_e) {
 		break;
 	}
 }
+
+//this is for when the level menu is being returned to after the player completes a level
+//so it can be on the completed level instead of gone back to the beginning
+//this will only be called right after the object is created
+void LevelMenu::scrollForwards(int amount) {
+	int end = amount;
+	//make sure it isn't trying to scroll too far forwards
+	if (amount > NUM_OF_LEVELS-current_level) end = NUM_OF_LEVELS - 1;
+	for (int i = 0; i < end; i++) {
+		for (int i = 0; i < NUM_OF_LEVELS; i++) {
+			all_levels[i]->scrollRight();
+		}
+		current_level++;
+		all_levels[current_level - 1]->select();
+	}
+}

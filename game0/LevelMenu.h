@@ -16,6 +16,7 @@ private:
 public:
 	LevelMenu();
 	int eventHandler(const df::Event* p_e) override;
+	void scrollForwards(int amount); //for setting up after a level
 };
 
 #endif

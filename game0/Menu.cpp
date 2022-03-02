@@ -47,7 +47,7 @@ int Menu::eventHandler(const df::Event *p_e) {
 
   if (p_e->getType() == WIN_EVENT){
     LM.writeLog("win event registered - menu");
-    setSprite("win");
+    //setSprite("win");
     hasStarted = 0;
     //WM.markForDelete(level);
   }

@@ -6,6 +6,7 @@
 #include "EventKeyboard.h"
 #include "LogManager.h"
 #include "EventWin.h"
+#include "LevelTransition.h"
 
 #include <string>
 using namespace std;
@@ -42,6 +43,7 @@ Level::Level(int level_number) {
 int Level::eventHandler(const df::Event* p_e) {
 	if (p_e->getType() == WIN_EVENT) {
 		LM.writeLog("win event registered - level");
+		new LevelTransition(level_num);
 		WM.markForDelete(board);
 		WM.markForDelete(this);
 		return 1;
