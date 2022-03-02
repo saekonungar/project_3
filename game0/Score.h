@@ -6,7 +6,6 @@
 #include <stdio.h>
 class Score : public df::ViewObject {
     private:
-        void start();
         int level;
     public:
         Score(std::string type, std::string sprite);

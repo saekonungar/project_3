@@ -49,6 +49,7 @@ GAMESRC= \
 		  LevelMenu.cpp\
 		  LevelTransition.cpp\
 		  Level.cpp\
+		  Score.cpp\
 		  
 
 GAME= game.cpp
