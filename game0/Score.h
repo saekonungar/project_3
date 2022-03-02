@@ -9,8 +9,10 @@ class Score {
         int level;
     public:
         Score();
+        int getHighScore(int lvl);
+        int getLargestLevel();
         //int eventHandler(const df::Event *p_e) override;
-        //int score;
+        int score;
         //int timer;
         
 };

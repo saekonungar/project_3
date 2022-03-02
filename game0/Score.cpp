@@ -9,10 +9,24 @@
 
 Score::Score(){
     std::ifstream input("derailed.save");
+    
+}
+
+int Score::getLargestLevel(){
+    std::ifstream input("derailed.save");
     std::string line;
     while( std::getline( input, line ) ) {
-        std::string token = line.substr(0, line.find(",")); 
-        LM.writeLog(1,token);
+        level = stoi(line.substr(0, line.find(","))); 
     }
+    return level;
+}
 
+int Score::getHighScore(int lvl){
+    std::ifstream input("derailed.save");
+    std::string line;
+    while( std::getline( input, line ) ) {
+        if(stoi(line.substr(0, line.find(","))) == lvl)
+            return stoi(line.substr(line.find(","))); 
+    }
+    return 0;
 }

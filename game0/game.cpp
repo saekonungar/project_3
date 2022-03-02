@@ -10,6 +10,7 @@
 #include "Space.h"
 #include "Board.h"
 #include "Menu.h"
+#include "Score.h"
 //methods
 void loadResources();
 void populateWorld();
