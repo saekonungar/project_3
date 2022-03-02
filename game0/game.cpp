@@ -10,7 +10,6 @@
 #include "Space.h"
 #include "Board.h"
 #include "Menu.h"
-
 //methods
 void loadResources();
 void populateWorld();
@@ -29,7 +28,13 @@ int main(int argc, char *argv[]) {
 
   // Show splash screen.
   //df::splash();
-
+  FILE * pFile;
+  pFile = fopen ("derailed.save","w+");
+  if (pFile!=NULL)
+  {
+    fputs ("1",pFile);
+    fclose (pFile);
+  }
   //load game resources.
   loadResources();
 

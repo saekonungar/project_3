@@ -46,6 +46,9 @@ GAMESRC= \
 		  Train.cpp\
 		  Board.cpp\
 		  EventWin.cpp\
+		  LevelMenu.cpp\
+		  LevelTransition.cpp\
+		  Level.cpp\
 		  
 
 GAME= game.cpp

@@ -5,7 +5,8 @@
 #include "Level.h"
 #include "WorldManager.h"
 #include "DisplayManager.h"
-
+#include "LogManager.h"
+#include <stdio.h>
 /*
 This is the menu that appears in between levels
 the player has the choice to go to the next level
@@ -16,7 +17,14 @@ LevelTransition::LevelTransition(int previous) {
 	setType("Level_Transition");
 	setSprite("level_transition");
 	prev_level = previous;
-
+	FILE * saveFile;
+	saveFile = fopen ("derailed.save","w+");
+	if (saveFile!=NULL)
+	{	
+		LM.writeLog("test");
+		fprintf(saveFile, "%i", prev_level+1); 
+		fclose (saveFile);
+	}
 	//set up location
 	df::Vector v(DM.getHorizontal() / 2, DM.getVertical() / 2);
 	setPosition(v);
