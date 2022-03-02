@@ -4,14 +4,15 @@
 #include "GameManager.h"
 #include "ResourceManager.h"
 #include "WorldManager.h"
+#include "Event.h"
 #include "EventStep.h"
-
+#include "EventWin.h"
 
 Score::Score(){
-    std::ifstream input("derailed.save");
-    
+    registerInterest(WIN_EVENT);
+    registerInterest(df::STEP_EVENT);
+    setViewString(score);
 }
-
 int Score::getLargestLevel(){
     std::ifstream input("derailed.save");
     std::string line;
@@ -29,4 +30,7 @@ int Score::getHighScore(int lvl){
             return stoi(line.substr(line.find(","))); 
     }
     return 0;
+}
+
+int Score::eventHandler(const df::Event *p_e) {
 }
