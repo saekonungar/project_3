@@ -50,7 +50,7 @@ GAMESRC= \
 		  LevelTransition.cpp\
 		  Level.cpp\
 		  Score.cpp\
-		  
+		  Cosmetics.cpp\
 
 GAME= game.cpp
 EXECUTABLE= game

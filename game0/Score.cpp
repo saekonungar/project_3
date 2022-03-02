@@ -9,9 +9,9 @@
 #include "EventWin.h"
 
 Score::Score(){
-    registerInterest(WIN_EVENT);
-    registerInterest(df::STEP_EVENT);
-    setViewString(score);
+   // df::registerInterest(WIN_EVENT);
+   // registerInterest(df::STEP_EVENT);
+   // setViewString(score);
 }
 int Score::getLargestLevel(){
     std::ifstream input("derailed.save");
@@ -32,5 +32,5 @@ int Score::getHighScore(int lvl){
     return 0;
 }
 
-int Score::eventHandler(const df::Event *p_e) {
-}
+//int Score::eventHandler(const df::Event *p_e) {
+//}
