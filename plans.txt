@@ -9,7 +9,6 @@ BOTH:
 features to add for polished:
 
 SKYE (im doing this now):
-- put train tracks between level selection menu
 - train rotate before game started
 - make the game pause for a second on a completed puzzle before pulling up the win menu
 - make the level selection move smoothly from side to side
@@ -26,3 +25,4 @@ SKYE
 - create a level menu
 - implement level transitions
 - experiment with the sizing of the screen and sprites
+- put train tracks between level selection menu

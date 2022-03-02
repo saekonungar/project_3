@@ -67,6 +67,9 @@ void loadResources() {
     RM.loadSprite("sprites/tracks_corner_2_spr.txt", "tracks_corner2");
     RM.loadSprite("sprites/tracks_corner_3_spr.txt", "tracks_corner3");
     RM.loadSprite("sprites/tracks_corner_4_spr.txt", "tracks_corner4");
+
+    //load cosmetic sprites
+    RM.loadSprite("sprites/tracks_across_spr.txt", "tracks_across");
 }
 
 void populateWorld() {
