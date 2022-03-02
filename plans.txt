@@ -4,20 +4,17 @@ DREW
 - make a savefile (updates whenever a puzzle is complete) read + write
 
 BOTH:
-- add more levels to populate said menu
+- add more levels
 
-features to add for polished:
+ANYONE:
+- have the score show up on the level selector as well as the level transition.
+- also maybe have the level transition show what level you just cleared
 
-SKYE (im doing this now):
-- put train tracks between level selection menu
-- train rotate before game started
-- make the game pause for a second on a completed puzzle before pulling up the win menu
+EXTRA POLISH (do some but not necessarily all)
 - make the level selection move smoothly from side to side
-
-- have train turn red when the player goes into a corner
+- have train turn red when the player goes into a corner, and have some kind of lives system or score penalty
 - consider additional cosmetic features (background for puzzles, etc)
 - also have level selection show highscore
-- and level transition
 - fix logs
 
 DONE:
@@ -26,3 +23,6 @@ SKYE
 - create a level menu
 - implement level transitions
 - experiment with the sizing of the screen and sprites
+- put train tracks between level selection menu
+- train rotate before game starts
+- make the game pause for a second on a completed puzzle before pulling up the win menu
