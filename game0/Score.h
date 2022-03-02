@@ -4,13 +4,14 @@
 #include <fstream>
 #include <string>
 #include <stdio.h>
-class Score : public df::ViewObject {
+class Score {
     private:
         int level;
     public:
-        Score(std::string type, std::string sprite);
-        int score;
-        int timer;
-        int eventHandler(const df::Event *p_e) override;
+        Score();
+        //int eventHandler(const df::Event *p_e) override;
+        //int score;
+        //int timer;
+        
 };
 #endif 

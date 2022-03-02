@@ -12,6 +12,7 @@ Score::Score(){
     std::string line;
     while( std::getline( input, line ) ) {
         std::string token = line.substr(0, line.find(",")); 
+        LM.writeLog(1,token);
     }
 
 }

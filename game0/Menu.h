@@ -12,7 +12,7 @@ class Menu : public df::ViewObject {
         int hasStarted;
         Board* level;
     public:
-        Menu(std::string type, std::string sprite);
+        Menu();
         int eventHandler(const df::Event *p_e) override;
         int draw() override;
         //void playMusic();

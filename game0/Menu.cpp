@@ -13,10 +13,10 @@
 #include "LevelMenu.h"
 
 
-Menu::Menu(std::string type, std::string sprite){
+Menu::Menu(){
 
-    setType(type);
-    setSprite(sprite);
+    setType("Menu");
+    setSprite("menu");
     setLocation(df::CENTER_CENTER);
     registerInterest(df::KEYBOARD_EVENT);
     registerInterest(WIN_EVENT);
