@@ -1,21 +1,28 @@
 for beta:
 DREW
-- implement timer as a displayobject
-- make a savefile (updates whenever a puzzle is complete)
+- implement timer as a displayobject and have the score logged somewhere
+- make a savefile (updates whenever a puzzle is complete) read + write
+
+BOTH:
+- add more levels to populate said menu
+
+features to add for polished:
+
+SKYE (im doing this now):
+- put train tracks between level selection menu
+- train rotate before game started
+- make the game pause for a second on a completed puzzle before pulling up the win menu
+- make the level selection move smoothly from side to side
+
+- have train turn red when the player goes into a corner
+- consider additional cosmetic features (background for puzzles, etc)
+- also have level selection show highscore
+- and level transition
+- fix logs
+
+DONE:
 
 SKYE
 - create a level menu
 - implement level transitions
-
-BOTH:
-- add more levels to populate said menu
 - experiment with the sizing of the screen and sprites
-
-features to add for polished:
-- train rotate before game started
-- have train turn red when the player goes into a corner
-- consider additional cosmetic features (background for puzzles, etc)
-- make the game pause for a second on a completed puzzle before pulling up the win menu
-- make the level selection move smoothly from side to side
-- also have level selection show highscore
-- put train tracks between level selection menu
