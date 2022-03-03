@@ -6,6 +6,7 @@
 #include "EventKeyboard.h"
 #include "LogManager.h"
 #include "EventWin.h"
+#include "EventStep.h"
 #include "LevelTransition.h"
 #include "Score.h"
 #include <string>
@@ -38,15 +39,20 @@ Level::Level(int level_number) {
 
 	//other stuff
 	registerInterest(WIN_EVENT);
+	registerInterest(df::STEP_EVENT);
 }
 
 int Level::eventHandler(const df::Event* p_e) {
 	if (p_e->getType() == WIN_EVENT) {
 		LM.writeLog("win event registered - level");
-		Score::setState(0);
+		Score::onWin(level_num);
 		new LevelTransition(level_num);
 		WM.markForDelete(board);
 		WM.markForDelete(this);
+		return 1;
+	}
+	if (p_e->getType() == df::STEP_EVENT) {
+		Score::handleTimer();
 		return 1;
 	}
 	return 0;

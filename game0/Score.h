@@ -7,7 +7,6 @@
 #include <stdio.h>
 class Score {
     private:
-        static int level;
         static bool playing;
         static int timer;
         static int score;
@@ -18,6 +17,6 @@ class Score {
         static void setState(bool state);
         static int getScore();
         static void handleTimer();
-        static void onWin();
+        static void onWin(int level);
 };
 #endif 

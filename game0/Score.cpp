@@ -10,16 +10,16 @@
 
 int Score::timer = 255;
 bool Score::playing = false;
-int Score::level = 1;
 int Score::score = 0;
 
 int Score::getLargestLevel(){
     std::ifstream input("derailed.save");
     std::string line;
+    int largest_level = 1;
     while( std::getline( input, line ) ) {
-        level = stoi(line.substr(0, line.find(","))); 
+        largest_level = stoi(line.substr(0, line.find(","))); 
     }
-    return level;
+    return largest_level;
     input.close();
 }
 
@@ -35,13 +35,17 @@ int Score::getHighScore(int lvl){
 }
 
 void Score::setHighScore(int lvl, int score){
-    std::ifstream input("derailed.save");
-    std::ofstream output("derailed.save");
+    std::ifstream input("derailedsave.txt");
+    std::ofstream output("derailedsave.txt", std::ios_base::app);
     std::string line;
-    while( std::getline( input, line ) ) {
-        if(stoi(line.substr(0, line.find(","))) == lvl && playing)
+    while(std::getline(input, line)) {
+        if (stoi(line.substr(0, line.find(","))) == lvl) {
+            LM.writeLog("TEST");
+            score = 420;
             line = line.substr(0, line.find(",")) + std::to_string(score);
+        }
         else{
+            
             output << std::to_string(lvl) + "," + std::to_string(score);
             break;
         }
@@ -65,9 +69,10 @@ void Score::handleTimer() {
     }
 }
 
-void Score::onWin() {
+void Score::onWin(int level) {
     score = 5 * (timer + 1);
-    //setHighScore(LevelMenu::getLevel(),score);
+    setHighScore(level, score);
     score = 0;
     timer = 255;
+    playing = false;
 }
