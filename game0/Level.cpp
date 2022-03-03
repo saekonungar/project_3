@@ -7,7 +7,7 @@
 #include "LogManager.h"
 #include "EventWin.h"
 #include "LevelTransition.h"
-
+#include "Score.h"
 #include <string>
 using namespace std;
 
@@ -24,7 +24,7 @@ Level::Level(int level_number) {
 	game_started = false;
 	selected = false;
 	if (level_num == 1) selected = true;
-
+	Score::setState(1);
 	//set up view
 	setValue(level_num);
 	setViewString(LEVEL_STRING);
@@ -43,6 +43,7 @@ Level::Level(int level_number) {
 int Level::eventHandler(const df::Event* p_e) {
 	if (p_e->getType() == WIN_EVENT) {
 		LM.writeLog("win event registered - level");
+		Score::setState(0);
 		new LevelTransition(level_num);
 		WM.markForDelete(board);
 		WM.markForDelete(this);

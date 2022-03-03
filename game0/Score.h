@@ -7,13 +7,16 @@
 class Score {
     private:
         int level;
+        int playing;
+        int timer;
+        void setHighScore(int lvl, int score);
     public:
         Score();
         int getHighScore(int lvl);
         int getLargestLevel();
-        //int eventHandler(const df::Event *p_e) override;
+        int eventHandler(const df::Event *p_e) override;
         int score;
-        //int timer;
+        void setState(int state);
         
 };
 #endif 

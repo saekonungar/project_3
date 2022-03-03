@@ -9,10 +9,10 @@
 
 class Level : public df::ViewObject {
 private:
-	int level_num;
 	bool game_started;
 	bool selected;
 	Board* board;
+	int level_num;
 public:
 	Level(int level_number);
 	int eventHandler(const df::Event* p_e) override;

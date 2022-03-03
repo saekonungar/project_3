@@ -6,6 +6,7 @@
 #include "WorldManager.h"
 #include "DisplayManager.h"
 #include "LogManager.h"
+#include "Score.h"
 #include <stdio.h>
 /*
 This is the menu that appears in between levels

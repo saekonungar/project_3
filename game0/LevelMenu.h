@@ -9,12 +9,14 @@
 
 class LevelMenu : public df::Object{
 private:
-	int current_level; //holds level number
+	
 	Level* all_levels[NUM_OF_LEVELS];
 	bool game_started;
 	void kbd(const df::EventKeyboard* p_k_e);
 public:
 	LevelMenu();
+	static int getLevel();
+	int current_level; //holds level number
 	int eventHandler(const df::Event* p_e) override;
 	void scrollForwards(int amount); //for setting up after a level
 };

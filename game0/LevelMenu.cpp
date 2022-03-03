@@ -26,6 +26,10 @@ LevelMenu::LevelMenu() {
 	current_level = 1;
 }
 
+int getLevel(){
+	return current_level;
+}
+
 int LevelMenu::eventHandler(const df::Event* p_e) {
 	if (p_e->getType() == df::KEYBOARD_EVENT) {
 		const df::EventKeyboard* p_keyboard_event = dynamic_cast <const df::EventKeyboard*> (p_e);
