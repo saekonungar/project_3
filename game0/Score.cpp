@@ -6,17 +6,12 @@
 #include "ResourceManager.h"
 #include "WorldManager.h"
 #include "Event.h"
-#include "EventStep.h"
-#include "EventWin.h"
 #include <string>
 
-Score::Score(){
-   registerInterest(WIN_EVENT);
-   registerInterest(df::STEP_EVENT);
-   timer = 255;
-   playing = false;
-   // setViewString(score);
-}
+int Score::timer = 255;
+bool Score::playing = false;
+int Score::level = 1;
+int Score::score = 0;
 
 int Score::getLargestLevel(){
     std::ifstream input("derailed.save");
@@ -60,26 +55,19 @@ void Score::setState(bool state){
     playing = state;
 }
 
-int Score::eventHandler(const df::Event *p_e) {
-    if (p_e->getType() == df::STEP_EVENT && playing) {
-        if(timer > 0){
-            timer -= 1;
-        }
-    }
-
-    if (p_e->getType() == WIN_EVENT){
-        score = 5 * (timer + 1);
-        //setHighScore(LevelMenu::getLevel(),score);
-        score = 0;
-        timer = 255;
-        WM.markForDelete(this);
-    }
-}
-
 int Score::getScore() {
     return score;
 }
 
-//int Score::eventHandler(const df::Event *p_e) {
-//}
+void Score::handleTimer() {
+    if (timer > 0) {
+        timer -= 1;
+    }
+}
 
+void Score::onWin() {
+    score = 5 * (timer + 1);
+    //setHighScore(LevelMenu::getLevel(),score);
+    score = 0;
+    timer = 255;
+}
