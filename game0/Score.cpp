@@ -8,6 +8,7 @@
 #include "Event.h"
 #include "EventStep.h"
 #include "EventWin.h"
+#include <string>
 
 Score::Score(){
     playing = 0;
@@ -32,16 +33,28 @@ int Score::getHighScore(int lvl){
         if(stoi(line.substr(0, line.find(","))) == lvl)
             return stoi(line.substr(line.find(","))); 
     }
+    input.close();
     return 0;
 }
 
 void Score::setHighScore(int lvl, int score){
     std::ifstream input("derailed.save");
+    std::ofstream output("derailed.save");
     std::string line;
     while( std::getline( input, line ) ) {
         if(stoi(line.substr(0, line.find(","))) == lvl && )
-            line = line.substr(0, line.find(",")) + 
+            line = line.substr(0, line.find(",")) + std::to_string(score);
+        else{
+            output << std::to_string(lvl) + "," + std::to_string(score);
+        }
+            
     }
+    output.close();
+    input.close();
+}
+
+void setState(int state){
+    playing = state;
 }
 
 int Score::eventHandler(const df::Event *p_e) {
@@ -56,10 +69,6 @@ int Score::eventHandler(const df::Event *p_e) {
         setHighScore(LevelMenu::getLevel(),score);
         score = 0;
         timer = 255;
-        playing = 0;
     }
 }
 
-void setState(int state){
-    playing = state;
-}
