@@ -18,8 +18,7 @@ private:
 	int current_level; //holds level number
 public:
 	LevelMenu();
-	static int getLevel();
-	
+	int getLevel();
 	int eventHandler(const df::Event* p_e) override;
 	void scrollForwards(int amount); //for setting up after a level
 };

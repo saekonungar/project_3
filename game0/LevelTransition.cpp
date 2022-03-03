@@ -6,6 +6,7 @@
 #include "WorldManager.h"
 #include "DisplayManager.h"
 #include "LogManager.h"
+#include "GameManager.h"
 #include "Score.h"
 #include <stdio.h>
 /*

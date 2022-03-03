@@ -9,14 +9,14 @@ class Score {
         int level;
         int playing;
         int timer;
-        void setHighScore(int lvl, int score);
+        static void setHighScore(int lvl, int score);
     public:
         Score();
-        int getHighScore(int lvl);
-        int getLargestLevel();
+        static int getHighScore(int lvl);
+        static int getLargestLevel();
         int eventHandler(const df::Event *p_e) override;
         int score;
-        void setState(int state);
+        static void setState(int state);
         
 };
 #endif 

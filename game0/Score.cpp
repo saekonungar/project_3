@@ -11,16 +11,9 @@
 #include <string>
 
 Score::Score(){
-<<<<<<< HEAD
-    playing = 0;
-    registerInterest(WIN_EVENT);
-    registerInterest(df::STEP_EVENT);
-    int timer = 255;
-=======
-   // df::registerInterest(WIN_EVENT);
-   // registerInterest(df::STEP_EVENT);
+   registerInterest(WIN_EVENT);
+   registerInterest(df::STEP_EVENT);
    // setViewString(score);
->>>>>>> main
 }
 int Score::getLargestLevel(){
     std::ifstream input("derailed.save");
@@ -43,7 +36,6 @@ int Score::getHighScore(int lvl){
     return 0;
 }
 
-<<<<<<< HEAD
 void Score::setHighScore(int lvl, int score){
     std::ifstream input("derailed.save");
     std::ofstream output("derailed.save");
@@ -80,7 +72,3 @@ int Score::eventHandler(const df::Event *p_e) {
     }
 }
 
-=======
-//int Score::eventHandler(const df::Event *p_e) {
-//}
->>>>>>> main
