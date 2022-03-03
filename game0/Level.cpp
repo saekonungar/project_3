@@ -25,6 +25,7 @@ Level::Level(int level_number) {
 	game_started = false;
 	selected = false;
 	if (level_num == 1) selected = true;
+
 	//set up view
 	setValue(level_num);
 	setViewString(LEVEL_STRING);
@@ -36,9 +37,13 @@ Level::Level(int level_number) {
 	v.setX(v.getX() + (LEVEL_SPACE * (level_number - 1)));
 	setPosition(v);
 
-	//other stuff
+	//events
 	registerInterest(WIN_EVENT);
 	registerInterest(df::STEP_EVENT);
+
+	//create score display
+	sd = new ScoreDisplay(level_num, true);
+	if (selected) sd->show();
 }
 
 int Level::eventHandler(const df::Event* p_e) {
@@ -46,7 +51,10 @@ int Level::eventHandler(const df::Event* p_e) {
 		LM.writeLog("win event registered - level");
 		Score::onWin(level_num);
 		new LevelTransition(level_num);
+
+		//delete this and associated objects
 		WM.markForDelete(board);
+		WM.markForDelete(sd);
 		WM.markForDelete(this);
 		return 1;
 	}
@@ -64,6 +72,7 @@ void Level::scrollLeft() {
 	//assume it has been deselected
 	selected = false;
 	setColor(df::BLUE);
+	sd->hide();
 }
 
 void Level::scrollRight() {
@@ -74,11 +83,13 @@ void Level::scrollRight() {
 	//assume it has been deselected
 	selected = false;
 	setColor(df::BLUE);
+	sd->hide();
 }
 
 void Level::select() {
 	selected = true;
 	setColor(df::YELLOW);
+	sd->show();
 }
 
 //start up the level!
@@ -87,6 +98,7 @@ void Level::launch() {
 	board = new Board(board_title.c_str());
 	game_started = true;
 	Score::startScore(level_num);
+	sd->hide();
 }
 
 int Level::draw() {

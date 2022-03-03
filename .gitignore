@@ -3,6 +3,5 @@ vs-2019/
 dragonfly/
 Debug/
 SFML-2.5/
-game0/vs-2019/
 game0/dragonfly.log
 game0/*.o

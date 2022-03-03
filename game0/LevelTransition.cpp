@@ -24,6 +24,9 @@ LevelTransition::LevelTransition(int previous) {
 	df::Vector v(DM.getHorizontal() / 2, DM.getVertical() / 2);
 	setPosition(v);
 
+	//set up display
+	score_display = new ScoreDisplay(prev_level, false);
+
 	//set up for events
 	registerInterest(df::KEYBOARD_EVENT);
 }
@@ -44,6 +47,7 @@ void LevelTransition::kbd(const df::EventKeyboard* p_k_e) {
 			if (prev_level != NUM_OF_LEVELS) {
 				Level *l = new Level(prev_level+1);
 				l->launch();
+				WM.markForDelete(score_display);
 				WM.markForDelete(this);
 			}
 		break;

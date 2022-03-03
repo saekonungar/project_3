@@ -13,6 +13,7 @@ bool Score::playing = false;
 int Score::score = 0;
 int Score::level = 1;
 
+//return the number of levels completed by the player
 int Score::getLargestLevel(){
     std::ifstream input("derailed.save");
     std::string line;
@@ -25,11 +26,11 @@ int Score::getLargestLevel(){
 }
 
 int Score::getHighScore(int lvl){
-    std::ifstream input("derailed.save");
+    std::ifstream input("derailedsave.txt");
     std::string line;
-    while( std::getline( input, line ) ) {
+    while(input >> line) {
         if(stoi(line.substr(0, line.find(","))) == lvl)
-            return stoi(line.substr(line.find(","))); 
+            return stoi(line.substr(line.find(",")+1)); 
     }
     input.close();
     return 0;

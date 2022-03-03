@@ -3,6 +3,7 @@
 
 #include "ViewObject.h"
 #include "Board.h"
+#include "ScoreDisplay.h"
 
 #define LEVEL_STRING "Level"
 #define LEVEL_SPACE 15
@@ -13,6 +14,7 @@ private:
 	bool selected;
 	Board* board;
 	int level_num;
+	ScoreDisplay* sd;
 public:
 	Level(int level_number);
 	int eventHandler(const df::Event* p_e) override;
