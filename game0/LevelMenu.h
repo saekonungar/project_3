@@ -10,7 +10,6 @@
 
 class LevelMenu : public df::Object{
 private:
-	
 	Level* all_levels[NUM_OF_LEVELS];
 	bool game_started;
 	void kbd(const df::EventKeyboard* p_k_e);

@@ -5,6 +5,7 @@
 #include "Level.h"
 #include "WorldManager.h"
 #include "DisplayManager.h"
+#include "GameManager.h"
 #include "LogManager.h"
 #include "GameManager.h"
 #include "Score.h"
