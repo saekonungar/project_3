@@ -10,6 +10,7 @@ class Score {
         static bool playing;
         static int timer;
         static int score;
+        static std::string strTemp;
         static void setHighScore(int lvl, int score);
     public:
         static int getHighScore(int lvl);

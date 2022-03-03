@@ -36,20 +36,17 @@ int Score::getHighScore(int lvl){
 
 void Score::setHighScore(int lvl, int score){
     std::ifstream input("derailedsave.txt");
-    std::ofstream output("derailedsave.txt", std::ios_base::app);
+    std::ofstream output("derailedsavetemp.txt", std::ios_base::app);
     std::string line;
-    while(std::getline(input, line)) {
-        if (stoi(line.substr(0, line.find(","))) == lvl) {
-            LM.writeLog("TEST");
-            score = 420;
-            line = line.substr(0, line.find(",")) + std::to_string(score);
-        }
-        else{
+
+    while(input >> strTemp)
+    {
+        if (stoi(line.substr(0, line.find(","))) == lvl){
             
-            output << std::to_string(lvl) + "," + std::to_string(score);
-            break;
+            strTemp = line.substr(0, line.find(",")) + "," + std::to_string(score);
         }
-            
+        strTemp += "\n";
+        output << strTemp;
     }
     output.close();
     input.close();
