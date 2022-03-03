@@ -25,7 +25,6 @@ Level::Level(int level_number) {
 	game_started = false;
 	selected = false;
 	if (level_num == 1) selected = true;
-	Score::setState(1);
 	//set up view
 	setValue(level_num);
 	setViewString(LEVEL_STRING);
@@ -87,6 +86,7 @@ void Level::launch() {
 	string board_title = "boards/board_" + to_string(level_num) + ".txt";
 	board = new Board(board_title.c_str());
 	game_started = true;
+	Score::startScore(level_num);
 }
 
 int Level::draw() {

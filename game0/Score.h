@@ -10,12 +10,13 @@ class Score {
         static bool playing;
         static int timer;
         static int score;
+        static int level;
         static std::string strTemp;
         static void setHighScore(int lvl, int score);
     public:
         static int getHighScore(int lvl);
         static int getLargestLevel();
-        static void setState(bool state);
+        static void startScore(int current_level);
         static int getScore();
         static void handleTimer();
         static void onWin(int level);
