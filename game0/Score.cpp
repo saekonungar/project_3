@@ -14,7 +14,6 @@ Score::Score(){
     playing = 0;
     registerInterest(WIN_EVENT);
     registerInterest(df::STEP_EVENT);
-    setViewString(score);
     int timer = 255;
 }
 int Score::getLargestLevel(){
@@ -24,6 +23,7 @@ int Score::getLargestLevel(){
         level = stoi(line.substr(0, line.find(","))); 
     }
     return level;
+    input.close();
 }
 
 int Score::getHighScore(int lvl){
@@ -46,6 +46,7 @@ void Score::setHighScore(int lvl, int score){
             line = line.substr(0, line.find(",")) + std::to_string(score);
         else{
             output << std::to_string(lvl) + "," + std::to_string(score);
+            break;
         }
             
     }
