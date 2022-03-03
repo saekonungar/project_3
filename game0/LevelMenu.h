@@ -15,10 +15,11 @@ private:
 	bool game_started;
 	void kbd(const df::EventKeyboard* p_k_e);
 	Cosmetics* tracks_accross;
+	int current_level; //holds level number
 public:
 	LevelMenu();
 	static int getLevel();
-	int current_level; //holds level number
+	
 	int eventHandler(const df::Event* p_e) override;
 	void scrollForwards(int amount); //for setting up after a level
 };

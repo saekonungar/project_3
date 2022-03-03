@@ -2,6 +2,7 @@
 #include "DisplayManager.h"
 #include "WorldManager.h"
 #include "LogManager.h"
+#include "GameManager.h"
 
 /*
 Level Menu is created when player presses P at the start
@@ -29,7 +30,7 @@ LevelMenu::LevelMenu() {
 	current_level = 1;
 }
 
-int getLevel(){
+int LevelMenu::getLevel(){
 	return current_level;
 }
 
