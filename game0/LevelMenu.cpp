@@ -18,6 +18,9 @@ LevelMenu::LevelMenu() {
 	df::Vector v(DM.getHorizontal() / 2, 4);
 	setPosition(v);
 
+	//make tracks accross
+	tracks_accross = new Cosmetics(C_Sprite::TRACK_LINE);
+
 	//set up levels
 	for (int i = 0; i < NUM_OF_LEVELS; i++) {
 		Level *l = new Level(i+1);
@@ -74,6 +77,11 @@ void LevelMenu::kbd(const df::EventKeyboard* p_k_e) {
 			}
 			setSprite("empty");
 			game_started = true;
+
+			//also get rid of the train tracks accross
+			if (tracks_accross != NULL) {
+				WM.markForDelete(tracks_accross);
+			}
 		}
 		break;
 	}

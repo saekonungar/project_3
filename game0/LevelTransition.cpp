@@ -52,5 +52,8 @@ void LevelTransition::kbd(const df::EventKeyboard* p_k_e) {
 			WM.markForDelete(this);
 		}
 		break;
+	case df::Keyboard::Q: //q
+		GM.setGameOver();
+		break;
 	}
 }

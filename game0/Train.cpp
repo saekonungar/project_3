@@ -2,15 +2,25 @@
 #include "LogManager.h"
 #include "WorldManager.h"
 #include "EventWin.h"
+#include "EventStep.h"
 
 Train::Train(Space* on_space) {
 	setType("Train");
 	setSprite("train_up_n");
 	setAltitude(3);
+	setPosition(on_space->getPosition());
+
+	//attributes
 	train_space = on_space;
 	spaces_to_fill = 0;
-	setPosition(on_space->getPosition());
+	level_started = false;
+	level_completed = false;
+	facing = Direction::UP;
+	timer = 0;
+
+	//events
 	registerInterest(df::KEYBOARD_EVENT);
+	registerInterest(df::STEP_EVENT);
 
 	//keep track of traced path
 	spaces_filled = 1;
@@ -30,10 +40,19 @@ int Train::eventHandler(const df::Event* p_e) {
 		kbd(p_keyboard_event);
 		return 1;
 	}
+	if (p_e->getType() == df::STEP_EVENT) {
+		step();
+		return 1;
+	}
 	return 0;
 }
 
 void Train::kbd(const df::EventKeyboard* p_k_e) {
+	//handle first move (enter key is still pressed)
+	if (!level_started && p_k_e->getKey() != df::Keyboard::RETURN && p_k_e->getKey() != df::Keyboard::SPACE) {
+		level_started = true;
+		timer = 0;
+	}
 	switch (p_k_e->getKey()) {
 	case df::Keyboard::W: //up
 		if (p_k_e->getKeyboardAction() == df::KEY_PRESSED)
@@ -72,8 +91,6 @@ void Train::move(Direction where) {
 
 		//physically move train
 		setPosition(train_space->getPosition());
-		if(spaces_filled == spaces_to_fill)
-			LM.writeLog("moved last time");
 		switch (where) {
 		case (UP):
 			setSprite("train_up_n");
@@ -92,8 +109,9 @@ void Train::move(Direction where) {
 		//after a move forward, check for win
 		if (spaces_filled == spaces_to_fill) {
 			train_space->markSpace(p_train_path[spaces_filled-1], NULL);
-			EventWin win;
-			WM.onEvent(&win);
+			level_completed = true;
+			//EventWin win;
+			//WM.onEvent(&win);
 		}
 
 	}
@@ -124,4 +142,45 @@ void Train::move(Direction where) {
 		}
 	}
 
+}
+
+//step handler
+//at start of game: train rotation (1 second for each rotation)
+//at end of game: timer until win event created (1 second)
+void Train::step() {
+	//start of game
+	if (!level_started) {
+		if (timer == 15) {
+			switch (facing) {
+			case (UP):
+				setSprite("train_right_n");
+				facing = Direction::RIGHT;
+				break;
+			case (RIGHT):
+				setSprite("train_down_n");
+				facing = Direction::DOWN;
+				break;
+			case (DOWN):
+				setSprite("train_left_n");
+				facing = Direction::LEFT;
+				break;
+			case (LEFT):
+				setSprite("train_up_n");
+				facing = Direction::UP;
+				break;
+			}
+			timer = 0;
+		}
+		else {
+			timer++;
+		}
+	}
+	//end of game
+	else if (level_completed) {
+		if (timer == 15) {
+			EventWin win;
+			WM.onEvent(&win);
+		}
+		timer++;
+	}
 }

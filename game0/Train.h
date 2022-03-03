@@ -11,16 +11,20 @@
 class Train : public df::Object {
 private:
 	Space* train_space; //space the train is currently on
-	Direction facing; //may be unneeded attribute
+	Direction facing;
 	void kbd(const df::EventKeyboard* p_k_e);
 	void move(Direction where);
 	Space* p_train_path[MAX_BOARD_SIZE];
 	int spaces_filled;
 	int spaces_to_fill;
+	int timer; //for rotation at start of level
+	bool level_started;
+	bool level_completed;
+	void step(); //for beginning and end of level
 public:
 	Train(Space* on_space);
 	int eventHandler(const df::Event* p_e) override;
-	void setNumSpaces(int num_spaces);
+	void setNumSpaces(int spaces); //sets spaces_to_fill
 };
 
 #endif
