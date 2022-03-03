@@ -14,7 +14,7 @@ class Menu : public df::ViewObject {
         Board* level;
 
     public:
-        Menu();
+        Menu(); 
         int eventHandler(const df::Event *p_e) override;
         int draw() override;
         //void playMusic();

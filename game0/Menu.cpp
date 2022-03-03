@@ -14,7 +14,7 @@
 
 
 Menu::Menu(){
-
+   
     setType("Menu");
     setSprite("menu");
     setLocation(df::CENTER_CENTER);

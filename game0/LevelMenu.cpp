@@ -12,7 +12,7 @@ NOTE: the level attribute holds the level NUMBER, not its index on the list
 LevelMenu::LevelMenu() {
 	registerInterest(df::KEYBOARD_EVENT);
 	game_started = false;
-
+ 
 	setType("LevelMenu");
 	setSprite("level_menu");
 	df::Vector v(DM.getHorizontal() / 2, 4);
@@ -60,7 +60,7 @@ void LevelMenu::kbd(const df::EventKeyboard* p_k_e) {
 				current_level--;
 				all_levels[current_level-1]->select();
 			}
-		break;
+		break; 
 	case df::Keyboard::RETURN: //select current level
 		if (p_k_e->getKeyboardAction() == df::KEY_PRESSED && !game_started) {
 			for (int i = 0; i < NUM_OF_LEVELS; i++) {

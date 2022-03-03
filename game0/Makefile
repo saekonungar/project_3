@@ -51,6 +51,7 @@ GAMESRC= \
 		  Level.cpp\
 		  Score.cpp\
 		  Cosmetics.cpp\
+		  ScoreDisplay.cpp\
 
 GAME= game.cpp
 EXECUTABLE= game

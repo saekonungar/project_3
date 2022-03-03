@@ -96,7 +96,7 @@ void Score::handleTimer() {
 }
 
 void Score::onWin(int level) {
-    score = 5 * (timer + 1);
+    score = 5 * (timer + 1) * (level/4);
     setHighScore(level, score);
     score = 0;
     timer = 255;

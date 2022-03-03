@@ -6,7 +6,7 @@
 #include "EventKeyboard.h"
 #include "Cosmetics.h"
 
-#define NUM_OF_LEVELS 10
+#define NUM_OF_LEVELS 12
 
 class LevelMenu : public df::Object{
 private:
@@ -17,7 +17,7 @@ private:
 	int current_level; //holds level number
 public:
 	LevelMenu();
-	int getLevel();
+	int getLevel(); 
 	int eventHandler(const df::Event* p_e) override;
 	void scrollForwards(int amount); //for setting up after a level
 };
