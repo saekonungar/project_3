@@ -6,7 +6,7 @@
 #include "ScoreDisplay.h"
 
 #define LEVEL_STRING "Level"
-#define LEVEL_SPACE 15
+#define LEVEL_SPACE 20
 
 class LevelTransition : public df::Object {
 private:

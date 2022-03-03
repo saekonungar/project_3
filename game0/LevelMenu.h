@@ -6,7 +6,7 @@
 #include "EventKeyboard.h"
 #include "Cosmetics.h"
 
-#define NUM_OF_LEVELS 12
+#define NUM_OF_LEVELS 20
 
 class LevelMenu : public df::Object{
 private:

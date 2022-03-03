@@ -1,6 +1,7 @@
 #include "Train.h"
 #include "LogManager.h"
 #include "WorldManager.h"
+#include "GameManager.h"
 #include "EventWin.h"
 #include "EventStep.h"
 
@@ -69,6 +70,10 @@ void Train::kbd(const df::EventKeyboard* p_k_e) {
 	case df::Keyboard::D: //right
 		if (p_k_e->getKeyboardAction() == df::KEY_PRESSED)
 			move(Direction::RIGHT);
+		break;
+	case df::Keyboard::Q: //end game
+		if (p_k_e->getKeyboardAction() == df::KEY_PRESSED)
+			GM.setGameOver();
 		break;
 	}
 }
