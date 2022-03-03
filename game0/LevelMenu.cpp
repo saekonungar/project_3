@@ -2,7 +2,6 @@
 #include "DisplayManager.h"
 #include "WorldManager.h"
 #include "LogManager.h"
-#include "GameManager.h"
 
 /*
 Level Menu is created when player presses P at the start
@@ -28,10 +27,6 @@ LevelMenu::LevelMenu() {
 		all_levels[i] = l;
 	}
 	current_level = 1;
-}
-
-int LevelMenu::getLevel(){
-	return current_level;
 }
 
 int LevelMenu::eventHandler(const df::Event* p_e) {

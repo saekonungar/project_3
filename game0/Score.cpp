@@ -11,17 +11,15 @@
 #include <string>
 
 Score::Score(){
-<<<<<<< HEAD
-    playing = 0;
+    playing = false;
     registerInterest(WIN_EVENT);
     registerInterest(df::STEP_EVENT);
     int timer = 255;
-=======
-   // df::registerInterest(WIN_EVENT);
-   // registerInterest(df::STEP_EVENT);
+    registerInterest(WIN_EVENT);
+    registerInterest(df::STEP_EVENT);
    // setViewString(score);
->>>>>>> main
 }
+
 int Score::getLargestLevel(){
     std::ifstream input("derailed.save");
     std::string line;
@@ -43,13 +41,12 @@ int Score::getHighScore(int lvl){
     return 0;
 }
 
-<<<<<<< HEAD
 void Score::setHighScore(int lvl, int score){
     std::ifstream input("derailed.save");
     std::ofstream output("derailed.save");
     std::string line;
     while( std::getline( input, line ) ) {
-        if(stoi(line.substr(0, line.find(","))) == lvl && )
+        if(stoi(line.substr(0, line.find(","))) == lvl && playing)
             line = line.substr(0, line.find(",")) + std::to_string(score);
         else{
             output << std::to_string(lvl) + "," + std::to_string(score);
@@ -61,12 +58,12 @@ void Score::setHighScore(int lvl, int score){
     input.close();
 }
 
-void setState(int state){
+void Score::setState(bool state){
     playing = state;
 }
 
 int Score::eventHandler(const df::Event *p_e) {
-    if (p_e->getType() == df::STEP_EVENT && playing == 1) {
+    if (p_e->getType() == df::STEP_EVENT && playing) {
         if(timer > 0){
             timer -= 1;
         }
@@ -74,13 +71,17 @@ int Score::eventHandler(const df::Event *p_e) {
 
     if (p_e->getType() == WIN_EVENT){
         score = 5 * (timer + 1);
-        setHighScore(LevelMenu::getLevel(),score);
+        //setHighScore(LevelMenu::getLevel(),score);
         score = 0;
         timer = 255;
+        WM.markForDelete(this);
     }
 }
 
-=======
+int Score::getScore() {
+    return score;
+}
+
 //int Score::eventHandler(const df::Event *p_e) {
 //}
->>>>>>> main
+
