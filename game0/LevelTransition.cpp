@@ -55,6 +55,7 @@ void LevelTransition::kbd(const df::EventKeyboard* p_k_e) {
 		if (p_k_e->getKeyboardAction() == df::KEY_PRESSED) {
 			LevelMenu *lm = new LevelMenu;
 			lm->scrollForwards(prev_level - 1);
+			WM.markForDelete(score_display);
 			WM.markForDelete(this);
 		}
 		break;
