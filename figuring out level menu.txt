@@ -1,8 +1,0 @@
-make 2 new classes:
-
-- Level, viewobject. method for creating specific board from it that can be accessed through the level menu
-- score display: your current high score for that level will be displayed 
-- Level Menu (both level selection and level transition)
-
-level display and level menu will be called by the menu
-

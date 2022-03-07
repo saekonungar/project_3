@@ -1,5 +1,5 @@
 #ifndef __LEVEL_TRANSITION__
-#define __LEVEL_TRANSITIONprev__
+#define __LEVEL_TRANSITION__
 
 #include "Object.h"
 #include "Board.h"

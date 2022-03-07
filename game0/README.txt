@@ -1,19 +1,20 @@
-SAUCER SHOOT
-Mark Claypool (WPI)
-2016-2019
+DERAILED
+Drew James and Skye Pritchard
 
-Saucer Shoot game from Dragonfly tutorial.
+--------------------------------------------------------------------
 
-Tutorial available online:
-
- http://dragonfly.wpi.edu/tutorial/index.html
-
-And in book:
-
- Mark Claypool. Dragonfly - Program a Game Engine from Scratch,
- Interactive Media and Game Development, Worcester Polytechnic
- Institute, 2016. Online at: http://dragonfly.wpi.edu/book/
-
+Code Breakdown
+Board - Initializes spaces and train for a given level, reading the board layout from a file
+Cosmetics - Handles sprites that are irrelevant to the actual function of the game
+EventWin - Event to be referenced in other classes
+game - sets up the game environment and initializes everything
+Level - Both a view object used to select a level, and a class that persists once a level has started to handle the win event.
+LevelMenu - the menu used to select the initial level
+LevelTransition - the menu that appears when a level is beaten and handles moving to the next level
+Menu - the menu that appears at the start of the game
+Score - Handles the score, timer, and save system (as the only persistent static object)
+Space - Each individual space in a board. Each space is a node that has connections to its neighboring spaces or a NULL pointer. This class handles the space's sprite, which changes when the train has driven over it
+Train - The physical train, handles player input for movement. It also rotates when the puzzle first starts. Handles train sprite based on direction last traveled.
 --------------------------------------------------------------------
 
 To build:
@@ -31,13 +32,12 @@ Linux or Mac, F5 on Windows from Visual Studio)
 
 Directories:
 
-sounds/ - contains the sound files used in Saucer shoot
-sprites/ - contains the sprite files used in Saucer shoot
-vs-2019/ - contains Visual Studio solution files (Microsoft Windows)
+sounds/ - contains the sound files used in Derailed    
+sprites/ - contains the sprite files used in Derailed
+boards/ - contains the level files used in Derailed
 
---------------------------------------------------------------------
 
-Happy shooting!
-
--- Mark
-claypool@cs.wpi.edu
+-- Skye
+stpritchard@wpi.edu
+-- Drew
+dtjames@wpi.edu

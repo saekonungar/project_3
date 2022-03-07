@@ -5,6 +5,12 @@
 #include "EventWin.h"
 #include "EventStep.h"
 
+/*
+The physical train, handles player input for movement.
+It also rotates when the puzzle first starts. Handles train sprite based on direction last traveled.
+Creates EventWin
+*/
+
 Train::Train(Space* on_space) {
 	setType("Train");
 	setSprite("train_up_n");
@@ -115,8 +121,6 @@ void Train::move(Direction where) {
 		if (spaces_filled == spaces_to_fill) {
 			train_space->markSpace(p_train_path[spaces_filled-1], NULL);
 			level_completed = true;
-			//EventWin win;
-			//WM.onEvent(&win);
 		}
 
 	}
